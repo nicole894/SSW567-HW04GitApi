@@ -12,15 +12,19 @@ def get_repo_commits(gid):
     for entry in response:
         for k, v in entry.items():
             if k == "name":
-                list_repos.append(v)
+                statement = dict()
                 commit_url = f"https://api.github.com/repos/{gid}/{v}/commits"
                 commit_response = requests.get(commit_url)
                 commit_responses = commit_response.json()
-                print(f"Repo: {v}  ; Number of commits: {len(commit_responses)}")
-
+                statement.update({'Repo' : v})
+                statement.update({'Number of commits': len(commit_responses)})
+                statements = (f"Repo: {v}  ; Number of commits: {len(commit_responses)}")
+                list_repos.append(statement)
+    return list_repos
 
 if __name__ == "__main__":
     print("Welcome to Assignment 4!")
     print("Enter a GitHub userID ")
     uid = input()
-    get_repo_commits(uid)
+    result = get_repo_commits(uid)
+    print(result)
