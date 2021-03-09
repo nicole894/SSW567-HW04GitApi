@@ -8,7 +8,7 @@ def get_repo_commits(gid):
     response =url_reponse.json()
     #
     if isinstance(response, dict):
-        print("Message not found")
+        print("Invalid UserId")
         #result = "Not a Valid UserID"
         return response['message']
     elif len(response) == 0:
@@ -28,10 +28,11 @@ def get_repo_commits(gid):
                      statement.update({'Number of commits': len(commit_responses)})
                      list_repos.append(statement)
                      #statements = (f"Repo: {v}  ; Number of commits: {len(commit_responses)}")
-                     return list_repos
 
 
-        #return [{'Repo': 'CasinoSlotMachine', 'Number of commits': 3}, {'Repo': 'CS570-DataStructures', 'Number of commits': 5}, {'Repo': 'GEDCOM-Parser-Project---CS-555', 'Number of commits': 30}, {'Repo': 'German-English-Laguage-Translator', 'Number of commits': 2}, {'Repo': 'helloworld', 'Number of commits': 2}, {'Repo': 'kg_nicole894_2021', 'Number of commits': 3}, {'Repo': 'Multiplayer-tic-tac-toe', 'Number of commits': 4}, {'Repo': 'NicoleAnnikaGonsalves_Projects_Python', 'Number of commits': 2}, {'Repo': 'PythonHackerRankChallenges', 'Number of commits': 3}, {'Repo': 'SSW-567-HW02a', 'Number of commits': 13}, {'Repo': 'SSW567-HW01', 'Number of commits': 2}, {'Repo': 'SSW567-HW04GitApi', 'Number of commits': 3}]
+    return list_repos
+
+
 
 
 if __name__ == "__main__":
