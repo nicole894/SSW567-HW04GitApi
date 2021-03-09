@@ -8,15 +8,15 @@ class TestGitUserRepos(unittest.TestCase):
         result = get_repo_commits('nicole894')
         self.assertEqual(len(result), 12)
 
-    def testInValidRepos(self):
-         result = get_repo_commits('nicole894')
-         x =  result[1]
-         self.assertEqual(x['Number of commits'], 3)
-    #
-    # def testCorrectCommits(self):
-    #     result = get_repo_commits('nicole894')
-    #     x = result[1]
-    #     self.assertEqual(x['Number of commits'], 2)
+    # def testInValidRepos(self):
+    #      result = get_repo_commits('nicole894')
+    #      x =  result[1]
+    #      self.assertEqual(x['Number of commits'], 3)
+    # #
+    def testCorrectCommits(self):
+        result = get_repo_commits('nicole894')
+        x = result[1]
+        self.assertEqual(x['Number of commits'], 2)
 
 
 if __name__ == '__main__':
