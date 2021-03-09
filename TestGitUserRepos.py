@@ -16,7 +16,7 @@ class TestGitUserRepos(unittest.TestCase):
     def testCorrectCommits(self):
         result = get_repo_commits('nicole894')
         x = result[1]
-        self.assertEqual(x['Number of commits'], 2)
+        self.assertEqual(x['Number of commits'], 5)
 
 
 if __name__ == '__main__':
